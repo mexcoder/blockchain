@@ -28,7 +28,7 @@ class Blockchain:
         return proof, bloque_nuevo
 
     def validar_chain(self):
-        for i in reversed(range(0, len(self.chain))):
+        for i in reversed(range(1, len(self.chain))):
             actual = self.chain[i]
             previo = self.chain[i-1]
             if(actual.hash != actual.generate_hash()):
